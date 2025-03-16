@@ -1,4 +1,5 @@
 const { Pool } = require('pg')
+require('dotenv').config()
 
 class Db extends Pool {
   constructor() {
@@ -6,8 +7,8 @@ class Db extends Pool {
       host: 'localhost',
       port: 5432,
       user: 'postgres',
-      password: 'chrysler0862',
-      database: 'recettelocale',
+      password: process.env.PASSWORD,
+      database: process.env.DATABASE,
       idleTimeoutMillis: 30000
     })
   }
