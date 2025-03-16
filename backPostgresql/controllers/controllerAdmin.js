@@ -65,10 +65,10 @@ const searchUser=async(req,res)=>{
 }
 
 const selectUser=async(req,res)=>{
-    const role=req.body.role
+    // const role=req.body.role
     const admin= new Admin()
 
-    const result= await admin.selectUser(role)
+    const result= await admin.selectUser("employe")
 
     if (result) {
         res.status(200).json({

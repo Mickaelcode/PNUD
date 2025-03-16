@@ -5,7 +5,7 @@ const insertRecette = async (req, res) => {
     const nom = req.body.nom
     const montant = req.body.montant
     const type = req.body.type
-    const natureRecette = new NatureRecette({ nom, montant, type })
+    const natureRecette = new natureRecette({ nom, montant, type })
     const result = await natureRecette.insert()
     if (result) {
         res.status(200).json({
@@ -83,4 +83,4 @@ const getPrice = async (req, res) => {
 }
 
 
-module.exports = { insertNatureRecette, modifyRecette, getAllRecette, getPrice, deleteNature }
+module.exports = { insertRecette, modifyRecette, getAllRecette, getPrice, deleteNature }
